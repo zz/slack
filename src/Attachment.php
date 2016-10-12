@@ -104,6 +104,12 @@ class Attachment
      */
     protected $timestamp;
 
+
+    /**
+     *  The callback ID for actions
+     */
+    protected $callback_id;
+
     /**
      * The fields of the attachment.
      *
@@ -197,6 +203,10 @@ class Attachment
 
         if (isset($attributes['author_icon'])) {
             $this->setAuthorIcon($attributes['author_icon']);
+        }
+
+        if (isset($attributes['callback_id'])) {
+            $this->setCallbackId($attributes['callback_id']);
         }
 
         if (isset($attributes['actions'])) {
@@ -409,6 +419,29 @@ class Attachment
         $this->timestamp = $timestamp;
 
         return $this;
+    }
+
+    /**
+     * Set the callback ID to use for the attachment.
+     *
+     * @param \DateTime $timestamp
+     * @return $this
+     */
+    public function setTimestamp($callback_id)
+    {
+        $this->callback_id = $callback_id;
+
+        return $this;
+    }
+
+    /**
+     * Get the callback ID to use for the attachment.
+     *
+     * @return string
+     */
+    public function getCallbackId()
+    {
+        return $this->callback_id;
     }
 
     /**
@@ -694,6 +727,7 @@ class Attachment
             'author_name' => $this->getAuthorName(),
             'author_link' => $this->getAuthorLink(),
             'author_icon' => $this->getAuthorIcon(),
+            'callback_id' => $this->getCallbackId(),
         ];
 
         $data['fields'] = $this->getFieldsAsArrays();
