@@ -427,7 +427,7 @@ class Attachment
      * @param \DateTime $timestamp
      * @return $this
      */
-    public function setTimestamp($callback_id)
+    public function setCallbackId($callback_id)
     {
         $this->callback_id = $callback_id;
 
