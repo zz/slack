@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Maknz\\Slack\\": "src/"
+            "Codeops\\Slack\\": "src/"
         }
     },
     "minimum-stability": "stable"
